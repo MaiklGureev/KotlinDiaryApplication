@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/calendar_and_tasks_fragment">
+
+    <fragment
+        android:id="@+id/calendar_and_tasks_fragment"
+        android:name="ru.gureev.kotlindiaryapplication.presentation.calendarandtasks.CalendarAndTasksFragment"
+        android:label="calendar_and_tasks_fragment"
+        tools:layout="@layout/calendar_and_tasks_fragment">
+        <action
+            android:id="@+id/action_calendar_and_tasks_fragment_to_taskDescriptionFragment"
+            app:destination="@id/task_description_fragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/calendar_and_tasks_fragment" />
+        <action
+            android:id="@+id/action_calendar_and_tasks_fragment_to_addTaskFragment"
+            app:destination="@id/add_task_fragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/calendar_and_tasks_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_task_fragment"
+        android:name="ru.gureev.kotlindiaryapplication.presentation.addtask.AddTaskFragment"
+        android:label="add_task_fragment"
+        tools:layout="@layout/add_task_fragment" />
+
+    <fragment
+        android:id="@+id/task_description_fragment"
+        android:name="ru.gureev.kotlindiaryapplication.presentation.diarydescription.TaskDescriptionFragment"
+        android:label="task_description_fragment"
+        tools:layout="@layout/task_description_fragment" />
+
+</navigation>

@@ -1,0 +1,3 @@
+package ru.gureev.kotlindiaryapplication.domain
+
+class LoadTaskUseCase
