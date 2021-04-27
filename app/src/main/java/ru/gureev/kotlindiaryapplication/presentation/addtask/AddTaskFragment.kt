@@ -10,10 +10,6 @@ import ru.gureev.kotlindiaryapplication.R
 
 class AddTaskFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = AddTaskFragment()
-    }
-
     private lateinit var viewModel: AddTaskViewModel
 
     override fun onCreateView(

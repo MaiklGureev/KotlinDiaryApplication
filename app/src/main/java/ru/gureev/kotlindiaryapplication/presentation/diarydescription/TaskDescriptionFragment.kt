@@ -10,9 +10,6 @@ import ru.gureev.kotlindiaryapplication.R
 
 class TaskDescriptionFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = TaskDescriptionFragment()
-    }
 
     private lateinit var viewModel: TaskDescriptionViewModel
 
