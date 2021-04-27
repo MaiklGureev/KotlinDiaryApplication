@@ -6,7 +6,7 @@ import java.util.*
 
 class TaskToTimeIntervalWithTasksMapper {
 
-    private var timeIntervalWithTasks: MutableList<TimeIntervalWithTasks> = arrayListOf()
+    var timeIntervalWithTasks: MutableList<TimeIntervalWithTasks> = arrayListOf()
 
     fun initIntervals(currentDate: Calendar) {
 
