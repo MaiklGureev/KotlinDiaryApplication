@@ -1,5 +1,6 @@
 package ru.gureev.kotlindiaryapplication.domain
 
+import java.text.SimpleDateFormat
 import java.util.*
 
 class TimeIntervalWithTasks {
@@ -13,12 +14,22 @@ class TimeIntervalWithTasks {
     }
 
     fun getFormattedTasks(): String {
-        var text = StringBuilder()
+        val text = StringBuilder()
         var counter = 1
         listTasks.forEach { task ->
-            text.append("$counter. ${task.name} \n Description: ${task.description}")
+
+            val timeStart =
+                SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
+                    .format(Calendar.getInstance().apply { timeInMillis = task.date_start }.time)
+            val timeFinish =
+                SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
+                    .format(Calendar.getInstance().apply { timeInMillis = task.date_finish }.time)
+            val time = "$timeStart - $timeFinish"
+
+            text.append("$counter. ${task.name} \nTime: $time \nDescription:${task.description}")
             if (counter != listTasks.size) text.append("\n")
             counter++
+
         }
         return text.toString()
     }
